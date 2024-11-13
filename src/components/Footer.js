@@ -2,7 +2,7 @@ import React from 'react';
 
 function Footer() {
     return (
-        <div className=' bg-black bg-opacity-88 text-gray-400 mt-5 '>
+        <div className=' bg-black bg-opacity-88 text-gray-400 mt-4 '>
             <div className='flex gap-8 bg-black bg-opacity-88 text-gray-400 p-5 md:p-10 pb-1 flex-col flex-wrap md:flex-nowrap md:flex-row'>
                 <div>
                     <h1  className=" text-3xl md:text-4xl font-extrabold p-2 text-custom-green-dark" >Heal Together</h1>
