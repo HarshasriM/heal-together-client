@@ -1,0 +1,472 @@
+[
+    {
+        "id":1,
+        "campaignTitle": "Help Sarah Fight Leukemia",
+        "campaignCategory": "Health",
+        "targetAmount": 250000,
+        "collectedAmount": 50000,
+        "campaignDescription": "Sarah, a 12-year-old girl, has been diagnosed with leukemia. Her family needs urgent funds to cover medical expenses for her treatment.",
+        "deadline": "2024-12-15",
+        "campaignerDetails": {
+            "firstName": "Emma",
+            "lastName": "Wilson",
+            "email":"emma@gmail.com",
+            "phone":"9345678029",
+            "country":"America",
+            "city":"New York"
+        },
+        "patientDetails": {
+            "firstName": "Michael",
+            "lastName": "Johnson",
+            "patientAge": 12,
+            "patientDisease": "Leukemia",
+            "hospitalName": "City Hospital",
+            "relationToPatient": "Father",
+            "isPatientAdmitted": true
+        },
+        "bankDetails": {
+            "accountHolderName": "Michael Johnson",
+            "accountType": "Savings",
+            "bankName": "City Bank",
+            "bankBranch": "Main Street Branch",
+            "accountNumber": "123456789012",
+            "ifscCode": "CITY0001234",
+            "upiId": "michaelj@citybank"
+        },
+        "additionalInformation": {
+            "supportingDocs": [
+                "https://robertshospital.com/wp-content/uploads/2024/06/Notification-B.Sc-Nursing-Course-2024-001_.png",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHGYGpaoEw0SwjR7ryaJpcoSg5mnF--NQMfvDf0njDyEkJ9DFCzA_KdP6t0eM0OL6K5UU&usqp=CAU"
+            ],
+            "campaignImage": "https://img.freepik.com/premium-photo/young-sick-man-coughing-sneezes_260672-5545.jpg?ga=GA1.1.1612218577.1731212725&semt=ais_hybrid",
+            "socialMediaLinks": {
+                "facebook": "https://facebook.com/supportSarah",
+                "instagram": "https://instagram.com/supportSarah",
+                "twitter": "https://twitter.com/supportSarah"
+            }
+        }
+    },
+    {
+        "id":2,
+        "campaignTitle": "Support John's Education",
+        "campaignCategory": "Education",
+        "targetAmount": 150000,
+        "collectedAmount": 80000,
+        "campaignDescription": "John, a bright student from a low-income family, needs support to continue his high school education.",
+        "deadline": "2024-11-30",
+        "campaignerDetails": {
+            "firstName": "Michael",
+            "lastName": "Johnson",
+            "email":"michael@gmail.com",
+            "phone":"9345678029",
+            "country":"America",
+            "city":"New York"
+        },
+        "patientDetails": {
+            "firstName": "Emma",
+            "lastName": "Wilson",
+            "patientAge": 16,
+            "patientDisease": null,
+            "hospitalName": null,
+            "relationToPatient": "Mother",
+            "isPatientAdmitted": false
+        },
+        "bankDetails": {
+            "accountHolderName": "Emma Wilson",
+            "accountType": "Checking",
+            "bankName": "Community Bank",
+            "bankBranch": "Eastside Branch",
+            "accountNumber": "987654321098",
+            "ifscCode": "COMB0005678",
+            "upiId": "emmaw@commbank"
+        },
+        "additionalInformation": {
+           "supportingDocs": [
+                "https://robertshospital.com/wp-content/uploads/2024/06/Notification-B.Sc-Nursing-Course-2024-001_.png",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHGYGpaoEw0SwjR7ryaJpcoSg5mnF--NQMfvDf0njDyEkJ9DFCzA_KdP6t0eM0OL6K5UU&usqp=CAU"
+            ],
+            "campaignImage": "https://img.freepik.com/premium-photo/young-sick-man-coughing-sneezes_260672-5545.jpg?ga=GA1.1.1612218577.1731212725&semt=ais_hybrid",
+            "socialMediaLinks": {
+                "facebook": "https://facebook.com/supportJohn",
+                "instagram": "https://instagram.com/supportJohn",
+                "twitter": "https://twitter.com/supportJohn"
+            }
+        }
+    },
+    {   
+        "id":3,
+        "campaignTitle": "Help Sarah Fight Leukemia",
+        "campaignCategory": "Health",
+        "targetAmount": 250000,
+        "collectedAmount": 50000,
+        "campaignDescription": "Sarah, a 12-year-old girl, has been diagnosed with leukemia. Her family needs urgent funds to cover medical expenses for her treatment.",
+        "deadline": "2024-12-15",
+        "campaignerDetails": {
+            "firstName": "Emma",
+            "lastName": "Wilson",
+            "email":"emma@gmail.com",
+            "phone":"9345678029",
+            "country":"America",
+            "city":"New York"
+        },
+        "patientDetails": {
+            "firstName": "Michael",
+            "lastName": "Johnson",
+            "patientAge": 12,
+            "patientDisease": "Leukemia",
+            "hospitalName": "City Hospital",
+            "relationToPatient": "Father",
+            "isPatientAdmitted": true
+        },
+        "bankDetails": {
+            "accountHolderName": "Michael Johnson",
+            "accountType": "Savings",
+            "bankName": "City Bank",
+            "bankBranch": "Main Street Branch",
+            "accountNumber": "123456789012",
+            "ifscCode": "CITY0001234",
+            "upiId": "michaelj@citybank"
+        },
+        "additionalInformation": {
+            "supportingDocs": [
+                "https://robertshospital.com/wp-content/uploads/2024/06/Notification-B.Sc-Nursing-Course-2024-001_.png",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHGYGpaoEw0SwjR7ryaJpcoSg5mnF--NQMfvDf0njDyEkJ9DFCzA_KdP6t0eM0OL6K5UU&usqp=CAU"
+            ],
+            "campaignImage": "https://img.freepik.com/premium-photo/young-sick-man-coughing-sneezes_260672-5545.jpg?ga=GA1.1.1612218577.1731212725&semt=ais_hybrid",
+            "socialMediaLinks": {
+                "facebook": "https://facebook.com/supportSarah",
+                "instagram": "https://instagram.com/supportSarah",
+                "twitter": "https://twitter.com/supportSarah"
+            }
+        }
+    },
+    {
+        "id":4,
+        "campaignTitle": "Help Sarah Fight Leukemia",
+        "campaignCategory": "Health",
+        "targetAmount": 250000,
+        "collectedAmount": 50000,
+        "campaignDescription": "Sarah, a 12-year-old girl, has been diagnosed with leukemia. Her family needs urgent funds to cover medical expenses for her treatment.",
+        "deadline": "2024-12-15",
+        "campaignerDetails": {
+            "firstName": "Emma",
+            "lastName": "Wilson",
+            "email":"emma@gmail.com",
+            "phone":"9345678029",
+            "country":"America",
+            "city":"New York"
+        },
+        "patientDetails": {
+            "firstName": "Michael",
+            "lastName": "Johnson",
+            "patientAge": 12,
+            "patientDisease": "Leukemia",
+            "hospitalName": "City Hospital",
+            "relationToPatient": "Father",
+            "isPatientAdmitted": true
+        },
+        "bankDetails": {
+            "accountHolderName": "Michael Johnson",
+            "accountType": "Savings",
+            "bankName": "City Bank",
+            "bankBranch": "Main Street Branch",
+            "accountNumber": "123456789012",
+            "ifscCode": "CITY0001234",
+            "upiId": "michaelj@citybank"
+        },
+        "additionalInformation": {
+            "supportingDocs": [
+                "https://robertshospital.com/wp-content/uploads/2024/06/Notification-B.Sc-Nursing-Course-2024-001_.png",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHGYGpaoEw0SwjR7ryaJpcoSg5mnF--NQMfvDf0njDyEkJ9DFCzA_KdP6t0eM0OL6K5UU&usqp=CAU"
+            ],
+            "campaignImage": "https://img.freepik.com/premium-photo/young-sick-man-coughing-sneezes_260672-5545.jpg?ga=GA1.1.1612218577.1731212725&semt=ais_hybrid",
+            "socialMediaLinks": {
+                "facebook": "https://facebook.com/supportSarah",
+                "instagram": "https://instagram.com/supportSarah",
+                "twitter": "https://twitter.com/supportSarah"
+            }
+        }
+    },
+    {
+        "id":5,
+        "campaignTitle": "Help Sarah Fight Leukemia",
+        "campaignCategory": "Health",
+        "targetAmount": 250000,
+        "collectedAmount": 50000,
+        "campaignDescription": "Sarah, a 12-year-old girl, has been diagnosed with leukemia. Her family needs urgent funds to cover medical expenses for her treatment.",
+        "deadline": "2024-12-15",
+        "campaignerDetails": {
+            "firstName": "Emma",
+            "lastName": "Wilson",
+            "email":"emma@gmail.com",
+            "phone":"9345678029",
+            "country":"America",
+            "city":"New York"
+        },
+        "patientDetails": {
+            "firstName": "Michael",
+            "lastName": "Johnson",
+            "patientAge": 12,
+            "patientDisease": "Leukemia",
+            "hospitalName": "City Hospital",
+            "relationToPatient": "Father",
+            "isPatientAdmitted": true
+        },
+        "bankDetails": {
+            "accountHolderName": "Michael Johnson",
+            "accountType": "Savings",
+            "bankName": "City Bank",
+            "bankBranch": "Main Street Branch",
+            "accountNumber": "123456789012",
+            "ifscCode": "CITY0001234",
+            "upiId": "michaelj@citybank"
+        },
+        "additionalInformation": {
+           "supportingDocs": [
+                "https://robertshospital.com/wp-content/uploads/2024/06/Notification-B.Sc-Nursing-Course-2024-001_.png",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHGYGpaoEw0SwjR7ryaJpcoSg5mnF--NQMfvDf0njDyEkJ9DFCzA_KdP6t0eM0OL6K5UU&usqp=CAU"
+            ],
+            "campaignImage": "https://img.freepik.com/premium-photo/young-sick-man-coughing-sneezes_260672-5545.jpg?ga=GA1.1.1612218577.1731212725&semt=ais_hybrid",
+            "socialMediaLinks": {
+                "facebook": "https://facebook.com/supportSarah",
+                "instagram": "https://instagram.com/supportSarah",
+                "twitter": "https://twitter.com/supportSarah"
+            }
+        }
+    },
+    {
+        "id":6,
+        "campaignTitle": "Help Sarah Fight Leukemia",
+        "campaignCategory": "Health",
+        "targetAmount": 250000,
+        "collectedAmount": 50000,
+        "campaignDescription": "Sarah, a 12-year-old girl, has been diagnosed with leukemia. Her family needs urgent funds to cover medical expenses for her treatment.",
+        "deadline": "2024-12-15",
+        "campaignerDetails": {
+            "firstName": "Emma",
+            "lastName": "Wilson",
+            "email":"emma@gmail.com",
+            "phone":"9345678029",
+            "country":"America",
+            "city":"New York"
+        },
+        "patientDetails": {
+            "firstName": "Michael",
+            "lastName": "Johnson",
+            "patientAge": 12,
+            "patientDisease": "Leukemia",
+            "hospitalName": "City Hospital",
+            "relationToPatient": "Father",
+            "isPatientAdmitted": true
+        },
+        "bankDetails": {
+            "accountHolderName": "Michael Johnson",
+            "accountType": "Savings",
+            "bankName": "City Bank",
+            "bankBranch": "Main Street Branch",
+            "accountNumber": "123456789012",
+            "ifscCode": "CITY0001234",
+            "upiId": "michaelj@citybank"
+        },
+        "additionalInformation": {
+            "supportingDocs": [
+                "https://robertshospital.com/wp-content/uploads/2024/06/Notification-B.Sc-Nursing-Course-2024-001_.png",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHGYGpaoEw0SwjR7ryaJpcoSg5mnF--NQMfvDf0njDyEkJ9DFCzA_KdP6t0eM0OL6K5UU&usqp=CAU"
+            ],
+            "campaignImage": "https://img.freepik.com/premium-photo/young-sick-man-coughing-sneezes_260672-5545.jpg?ga=GA1.1.1612218577.1731212725&semt=ais_hybrid",
+            "socialMediaLinks": {
+                "facebook": "https://facebook.com/supportSarah",
+                "instagram": "https://instagram.com/supportSarah",
+                "twitter": "https://twitter.com/supportSarah"
+            }
+        }
+    },
+    {
+        "id":7,
+        "campaignTitle": "Help Sarah Fight Leukemia",
+        "campaignCategory": "Health",
+        "targetAmount": 250000,
+        "collectedAmount": 50000,
+        "campaignDescription": "Sarah, a 12-year-old girl, has been diagnosed with leukemia. Her family needs urgent funds to cover medical expenses for her treatment.",
+        "deadline": "2024-12-15",
+        "campaignerDetails": {
+            "firstName": "Emma",
+            "lastName": "Wilson",
+            "email":"emma@gmail.com",
+            "phone":"9345678029",
+            "country":"America",
+            "city":"New York"
+        },
+        "patientDetails": {
+            "firstName": "Michael",
+            "lastName": "Johnson",
+            "patientAge": 12,
+            "patientDisease": "Leukemia",
+            "hospitalName": "City Hospital",
+            "relationToPatient": "Father",
+            "isPatientAdmitted": true
+        },
+        "bankDetails": {
+            "accountHolderName": "Michael Johnson",
+            "accountType": "Savings",
+            "bankName": "City Bank",
+            "bankBranch": "Main Street Branch",
+            "accountNumber": "123456789012",
+            "ifscCode": "CITY0001234",
+            "upiId": "michaelj@citybank"
+        },
+        "additionalInformation": {
+            "supportingDocs": [
+                "https://robertshospital.com/wp-content/uploads/2024/06/Notification-B.Sc-Nursing-Course-2024-001_.png",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHGYGpaoEw0SwjR7ryaJpcoSg5mnF--NQMfvDf0njDyEkJ9DFCzA_KdP6t0eM0OL6K5UU&usqp=CAU"
+            ],
+            "campaignImage": "https://img.freepik.com/premium-photo/young-sick-man-coughing-sneezes_260672-5545.jpg?ga=GA1.1.1612218577.1731212725&semt=ais_hybrid",
+            "socialMediaLinks": {
+                "facebook": "https://facebook.com/supportSarah",
+                "instagram": "https://instagram.com/supportSarah",
+                "twitter": "https://twitter.com/supportSarah"
+            }
+        }
+    },
+    {
+        "id":8,
+        "campaignTitle": "Help Sarah Fight Leukemia",
+        "campaignCategory": "Health",
+        "targetAmount": 250000,
+        "collectedAmount": 50000,
+        "campaignDescription": "Sarah, a 12-year-old girl, has been diagnosed with leukemia. Her family needs urgent funds to cover medical expenses for her treatment.",
+        "deadline": "2024-12-15",
+        "campaignerDetails": {
+            "firstName": "Emma",
+            "lastName": "Wilson",
+            "email":"emma@gmail.com",
+            "phone":"9345678029",
+            "country":"America",
+            "city":"New York"
+        },
+        "patientDetails": {
+            "firstName": "Michael",
+            "lastName": "Johnson",
+            "patientAge": 12,
+            "patientDisease": "Leukemia",
+            "hospitalName": "City Hospital",
+            "relationToPatient": "Father",
+            "isPatientAdmitted": true
+        },
+        "bankDetails": {
+            "accountHolderName": "Michael Johnson",
+            "accountType": "Savings",
+            "bankName": "City Bank",
+            "bankBranch": "Main Street Branch",
+            "accountNumber": "123456789012",
+            "ifscCode": "CITY0001234",
+            "upiId": "michaelj@citybank"
+        },
+        "additionalInformation": {
+            "supportingDocs": [
+                "https://robertshospital.com/wp-content/uploads/2024/06/Notification-B.Sc-Nursing-Course-2024-001_.png",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHGYGpaoEw0SwjR7ryaJpcoSg5mnF--NQMfvDf0njDyEkJ9DFCzA_KdP6t0eM0OL6K5UU&usqp=CAU"
+            ],
+            "campaignImage": "https://img.freepik.com/premium-photo/young-sick-man-coughing-sneezes_260672-5545.jpg?ga=GA1.1.1612218577.1731212725&semt=ais_hybrid",
+            "socialMediaLinks": {
+                "facebook": "https://facebook.com/supportSarah",
+                "instagram": "https://instagram.com/supportSarah",
+                "twitter": "https://twitter.com/supportSarah"
+            }
+        }
+    },
+    {
+        "id":9,
+        "campaignTitle": "Help Sarah Fight Leukemia",
+        "campaignCategory": "Health",
+        "targetAmount": 250000,
+        "collectedAmount": 50000,
+        "campaignDescription": "Sarah, a 12-year-old girl, has been diagnosed with leukemia. Her family needs urgent funds to cover medical expenses for her treatment.",
+        "deadline": "2024-12-15",
+        "campaignerDetails": {
+            "firstName": "Emma",
+            "lastName": "Wilson",
+            "email":"emma@gmail.com",
+            "phone":"9345678029",
+            "country":"America",
+            "city":"New York"
+        },
+        "patientDetails": {
+            "firstName": "Michael",
+            "lastName": "Johnson",
+            "patientAge": 12,
+            "patientDisease": "Leukemia",
+            "hospitalName": "City Hospital",
+            "relationToPatient": "Father",
+            "isPatientAdmitted": true
+        },
+        "bankDetails": {
+            "accountHolderName": "Michael Johnson",
+            "accountType": "Savings",
+            "bankName": "City Bank",
+            "bankBranch": "Main Street Branch",
+            "accountNumber": "123456789012",
+            "ifscCode": "CITY0001234",
+            "upiId": "michaelj@citybank"
+        },
+        "additionalInformation": {
+            "supportingDocs": [
+                "https://robertshospital.com/wp-content/uploads/2024/06/Notification-B.Sc-Nursing-Course-2024-001_.png",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHGYGpaoEw0SwjR7ryaJpcoSg5mnF--NQMfvDf0njDyEkJ9DFCzA_KdP6t0eM0OL6K5UU&usqp=CAU"
+            ],
+            "campaignImage": "https://img.freepik.com/premium-photo/young-sick-man-coughing-sneezes_260672-5545.jpg?ga=GA1.1.1612218577.1731212725&semt=ais_hybrid",
+            "socialMediaLinks": {
+                "facebook": "https://facebook.com/supportSarah",
+                "instagram": "https://instagram.com/supportSarah",
+                "twitter": "https://twitter.com/supportSarah"
+            }
+        }
+    },
+    {
+        "id":10,
+        "campaignTitle": "Help Sarah Fight Leukemia",
+        "campaignCategory": "Health",
+        "targetAmount": 250000,
+        "collectedAmount": 50000,
+        "campaignDescription": "Sarah, a 12-year-old girl, has been diagnosed with leukemia. Her family needs urgent funds to cover medical expenses for her treatment.",
+        "deadline": "2024-12-15",
+        "campaignerDetails": {
+            "firstName": "Emma",
+            "lastName": "Wilson",
+            "email":"emma@gmail.com",
+            "phone":"9345678029",
+            "country":"America",
+            "city":"New York"
+        },
+        "patientDetails": {
+            "firstName": "Michael",
+            "lastName": "Johnson",
+            "patientAge": 12,
+            "patientDisease": "Leukemia",
+            "hospitalName": "City Hospital",
+            "relationToPatient": "Father",
+            "isPatientAdmitted": true
+        },
+        "bankDetails": {
+            "accountHolderName": "Michael Johnson",
+            "accountType": "Savings",
+            "bankName": "City Bank",
+            "bankBranch": "Main Street Branch",
+            "accountNumber": "123456789012",
+            "ifscCode": "CITY0001234",
+            "upiId": "michaelj@citybank"
+        },
+        "additionalInformation": {
+            "supportingDocs": [
+                "https://robertshospital.com/wp-content/uploads/2024/06/Notification-B.Sc-Nursing-Course-2024-001_.png",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHGYGpaoEw0SwjR7ryaJpcoSg5mnF--NQMfvDf0njDyEkJ9DFCzA_KdP6t0eM0OL6K5UU&usqp=CAU"
+            ],
+            "campaignImage": "https://img.freepik.com/premium-photo/young-sick-man-coughing-sneezes_260672-5545.jpg?ga=GA1.1.1612218577.1731212725&semt=ais_hybrid",
+            "socialMediaLinks": {
+                "facebook": "https://facebook.com/supportSarah",
+                "instagram": "https://instagram.com/supportSarah",
+                "twitter": "https://twitter.com/supportSarah"
+            }
+        }
+    }
+]
