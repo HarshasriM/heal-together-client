@@ -6,7 +6,7 @@ const PrivateRoute = ({ children }) => {
   useEffect(()=>{
     if(!token)
         alert("Login to the Page Is Required")
-  },[])
+  },[token])
  
   return token ? children : <Navigate to="/login" />;
 };

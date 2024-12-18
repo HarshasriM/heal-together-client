@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
 import { styled } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
@@ -28,17 +29,21 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
 function SingleCampaign() {
     const { id } = useParams();
     const [campaign, setCampaign] = useState(null);
+    const campaignUrl = "http://localhost:4000/api/campaigns";
 
     const fetchCampaign = useCallback(async () => {
         try {
-            const response = await fetch('/campaigns.json');
-            const data = await response.json();
-            const campaignId = Number(id);
-            const foundCampaign = data.find((item) => Number(item.id) === campaignId);
+            // const response = await fetch('/campaigns.json');
+            // const data = await response.json();
+            // const campaignId = Number(id);
+            // const foundCampaign = data.find((item) => Number(item.id) === campaignId);
 
-            if (foundCampaign) {
-                setCampaign(foundCampaign);
-            }
+            // if (foundCampaign) {
+            //     setCampaign(foundCampaign);
+            // }
+            const response = await axios.get(`${campaignUrl}/${id}`);
+            setCampaign(response.data.data);
+            
         } catch (err) {
             console.error('Error fetching campaign data:', err);
         }

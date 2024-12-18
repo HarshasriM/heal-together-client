@@ -23,20 +23,22 @@ const CampaignLayout = () => {
     };
 
     const fetchFilteredCampaigns = async (filters) => {
-        // try {
-        //     const response = await axios.get("/campaigns", {
-        //         params: filters, // Send filters as query parameters
-        //     });
-        //     setCampaigns(response.data); // Update campaigns state with response data
-        // } catch (error) {
-        //     console.error("Error fetching campaigns:", error);
-        // }
-        fetch('/campaigns.json') // Note: This will look for the file in the 'public' folder
-            .then(response => response.json())
-            .then(data => setCampaigns(data))
-            .catch(error => console.error('Error fetching team data:', error));
+        try {
+            const query = new URLSearchParams(filters).toString();
+            const response = await axios.get(`http://localhost:4000/api/campaigns/filter?${query}`);
+            // const response = await axios.get("/filter", {
+            //     params:filters, // Send filters as query parameters
+            // });
+            setCampaigns(response.data.data); // Update campaigns state with response data
+        } catch (error) {
+            console.log("Error fetching campaigns:", error.message);
+        }
+        // fetch('/campaigns.json') // Note: This will look for the file in the 'public' folder
+        //     .then(response => response.json())
+        //     .then(data => setCampaigns(data))
+        //     .catch(error => console.error('Error fetching team data:', error));
     };
-
+ 
     useEffect(() => {
         fetchFilteredCampaigns(filters); // Initial fetch
     }, [filters]);
@@ -68,7 +70,7 @@ const CampaignLayout = () => {
             <div className="grid grid-cols-2 gap-5 md:grid-cols-3 p-10 mt-5 md:mt-0 h-lvh overflow-y-auto">
                 {/* Campaigns List */}
                 {campaigns.map((campaign) => (
-                    <CampaignCard campaign={campaign} key={campaign.id}/>
+                    <CampaignCard campaign={campaign} key={campaign._id}/>
                 ))}
             </div>
         </div>

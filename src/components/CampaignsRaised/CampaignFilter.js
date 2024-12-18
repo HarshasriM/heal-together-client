@@ -1,10 +1,22 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 function CampaignFilter({ onFilterChange }) {
     const [campaignCategory, setCampaignCategory] = useState("");
     const [amountRange, setAmountRange] = useState(""); // Min and Max range
     const [sortField, setSortField] = useState("targetAmount");
     const [sortOrder, setSortOrder] = useState("asc"); // 'asc' or 'desc'
+    useEffect(() => {
+        sendFiltersToParent();
+    }, [campaignCategory]); // Dependency on campaignCategory
+    useEffect(() => {
+        sendFiltersToParent();
+    }, [amountRange]);
+    useEffect(() => {
+        sendFiltersToParent();
+    }, [sortField]);
+    useEffect(() => {
+        sendFiltersToParent();
+    }, [sortOrder]);
 
     // Handle changes
     const handleCategoryChange = (e) => {
@@ -51,8 +63,8 @@ function CampaignFilter({ onFilterChange }) {
                         className="ml-4 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-custom-green-light sm:max-w-xs sm:text-sm/6"
                     >
                         <option value="">All Categories</option>
-                        <option value="health">Medical Emergency</option>
-                        <option value="education">Education</option>
+                        <option value="Health">Medical Emergency</option>
+                        <option value="Education">Education</option>
                         <option value="community">Community</option>
                     </select>
                 </div>
