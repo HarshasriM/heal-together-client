@@ -27,7 +27,7 @@ function App() {
         <Route path='/startcampaign' element={<PrivateRoute><Campaign /></PrivateRoute>} />
         <Route path='/campaigns-raised' element={<CampaignsRaised />} />
         <Route path='/campaigns-raised/:id' element={<SingleCampaign />} />
-        <Route path='/donate' element={<PrivateRoute><Donation /></PrivateRoute>} />
+        <Route path='/donate/:id' element={<PrivateRoute><Donation /></PrivateRoute>} />
       </Routes>
       <div>
         <Footer />

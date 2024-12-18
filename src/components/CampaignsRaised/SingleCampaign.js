@@ -62,7 +62,7 @@ function SingleCampaign() {
                         <img className="m-3 rounded-lg" src={campaign.additionalInformation.campaignImage} alt="campaign" />
                     </div>
                     <div className='flex-1'>
-                        <Link to={`/donate`}>
+                        <Link to={`/donate/${campaign._id}`}>
                             <button className="my-4 text-xl px-8 py-4 font-bold bg-custom-gradient rounded-full text-white" style={{ width: "100%" }}>
                                 <span><i className="fa-solid fa-heart m-1"></i> Donate Now</span>
                             </button>

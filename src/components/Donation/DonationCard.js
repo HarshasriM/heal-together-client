@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Container, Tabs, Tab, Box, Dialog, DialogTitle, DialogContent, Typography } from '@mui/material';
+import { Container, Tabs, Tab, Box, Dialog, DialogContent, Typography } from '@mui/material';
 import { styled } from '@mui/system';
-
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -42,10 +43,46 @@ function DonationCard() {
     const [value, setValue] = useState(0);
     const [transactionCompleted, setTransactionCompleted] = useState(false);
     const navigate = useNavigate();
+    const {id} = useParams();
+    const donateUrl = "http://localhost:4000/api/donations"
+    const user = localStorage.getItem("user");
+    const did = JSON.parse(user)._id;
+    const [formData,setFormData] = useState({
+        amount:"",
+        type:"card",
+        campaignId:id,
+        donarId:did,
+        transactionId:"TX123456",
+        cardNumber:"",
+        cardHolderName:"",
+        cvv:"",
+        expiryDate:"",
+        upiId:"",
 
+    })
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
+    const handleChageValue = (e)=>{
+        const {name,value} = e.target;
+        setFormData({ ...formData, [name]: value });
+    }
+    const handleSubmit = async (e)=>{
+        e.preventDefault();
+        try{
+            const response = await axios.post(donateUrl,formData);
+            if(response){
+                handleTransactionComplete();
+            }
+            else{
+                alert("transaction not completed due to some error")
+            }
+        }
+        catch(error){
+            console.error("Login Failed:", error.response?.data || error.message);
+            alert("Failed to Login: " + (error.response?.data?.message || error.message));
+        }
+    }
     const handleTransactionComplete = () => {
         // Simulate processing
         setTimeout(() => {
@@ -80,7 +117,7 @@ function DonationCard() {
                 </Typography>
                 <div className='px-10'>
 
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <div className='border-b border-custom-green-dark pb-12 mb-10'>
                             <Typography
                                 variant="h4"
@@ -130,14 +167,16 @@ function DonationCard() {
                                 </div>
 
                                 <div className="">
-                                    <label htmlFor="mobile" className="block text-sm/6 font-medium text-gray-900">
-                                        Mobile
+                                    <label htmlFor="Amount" className="block text-sm/6 font-medium text-gray-900">
+                                        Amount
                                     </label>
                                     <div className="mt-2">
                                         <input
-                                            id="mobile"
-                                            name="mobile"
-                                            type="tel"
+                                            id="Amount"
+                                            name="amount"
+                                            type="number"
+                                            value={formData.amount}
+                                            onChange={handleChageValue}
                                             autoComplete="given-number"
                                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus-within:ring-custom-green-light sm:text-sm/6"
                                         />
@@ -145,9 +184,7 @@ function DonationCard() {
                                 </div>
                             </div>
                         </div>
-                    </form>
-                </div>
-                <div>
+                        <div>
                     <Tabs
                         orientation="horizontal"
                         value={value}
@@ -156,8 +193,8 @@ function DonationCard() {
                         TabIndicatorProps={{ style: { display: 'block', background: "#51b78d" } }}
                     >
 
-                        <CustomTab label="Payment Via Card" sx={{ marginLeft: "100px" }} />
-                        <CustomTab label="Payment Via UPI" />
+                        <CustomTab label="Payment Via Card" sx={{ marginLeft: "100px" }} onClick={()=>{setFormData({ ...formData, type: "card" })}}/>
+                        <CustomTab label="Payment Via UPI"  onClick={()=>{setFormData({ ...formData, type: "upi" })}} />
 
                     </Tabs>
                     <TabPanel value={value} index={0}>
@@ -169,8 +206,10 @@ function DonationCard() {
                                 </label>
                                 <input
                                     id="cardnumber"
-                                    name="cardnumber"
+                                    name="cardNumber"
                                     type="text"
+                                    value={formData.cardNumber}
+                                    onChange={handleChageValue}
                                     autoComplete="given-number"
                                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus-within:ring-custom-green-light sm:text-sm/6"
                                 />
@@ -182,8 +221,10 @@ function DonationCard() {
                                 </label>
                                 <input
                                     id="cardholdername"
-                                    name="cardholdername"
+                                    name="cardHolderName"
                                     type="text"
+                                    value={formData.cardHolderName}
+                                    onChange={handleChageValue}
                                     autoComplete="given-number"
                                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus-within:ring-custom-green-light sm:text-sm/6"
                                 />
@@ -196,8 +237,10 @@ function DonationCard() {
                                 </label>
                                 <input
                                     id="expirydate"
-                                    name="expirydate"
+                                    name="expiryDate"
                                     type="Date"
+                                    value={formData.expiryDate}
+                                    onChange={handleChageValue}
                                     autoComplete="given-number"
                                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus-within:ring-custom-green-light sm:text-sm/6"
                                 />
@@ -210,6 +253,8 @@ function DonationCard() {
                                     id="cvv"
                                     name="cvv"
                                     type="text"
+                                    value = {formData.cvv}
+                                    onChange={handleChageValue}
                                     autoComplete="given-number"
                                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus-within:ring-custom-green-light sm:text-sm/6"
                                 />
@@ -217,7 +262,7 @@ function DonationCard() {
                         </div>
                         <div className='text-center'>
 
-                            <button className="my-5 px-4 py-2 font-bold bg-custom-gradient rounded-full text-gray-200 " onClick={handleTransactionComplete}>
+                            <button className="my-5 px-4 py-2 font-bold bg-custom-gradient rounded-full text-gray-200 " >
                                 Pay Now
                             </button>
                         </div>
@@ -236,13 +281,16 @@ function DonationCard() {
                             />
                         </div>
                         <div className='text-center'>
-                            <button className="my-5 px-4 py-2 font-bold bg-custom-gradient rounded-full text-gray-200 " onClick={handleTransactionComplete}>
+                            <button className="my-5 px-4 py-2 font-bold bg-custom-gradient rounded-full text-gray-200 " >
                                 Pay Now
                             </button>
                         </div>
                     </TabPanel>
 
                 </div>
+                    </form>
+                </div>
+                
 
             </Container>
             {/* Transaction Completed Dialog */}

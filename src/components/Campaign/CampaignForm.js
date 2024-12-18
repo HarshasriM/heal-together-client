@@ -2,14 +2,19 @@ import React from 'react';
 import { Typography } from '@mui/material';
 import { PhotoIcon } from '@heroicons/react/24/solid';
 import { useState } from 'react';
+import { ObjectId } from 'mongoose';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 function CampaignForm() {
+    const user = localStorage.getItem("user");
+    const campaignerid = JSON.parse(user)._id;
     const [formData, setFormData] = useState({
         campaignTitle: '',
         campaignCategory: '',
         targetAmount: '',
         campaignDescription: '',
         deadline: '',
-        campaignerDetails: '', // User ID from backend
+        campaignerDetails:campaignerid, // User ID from backend
         patientDetails: {
           firstName: '',
           lastName: '',
@@ -35,7 +40,7 @@ function CampaignForm() {
         },
       });
     
-
+      const navigate = useNavigate();
       const handleChange = (e, section, field) => {
         const { name, value, type, files, checked } = e.target;
     
@@ -44,7 +49,15 @@ function CampaignForm() {
             ...prev,
             [section]: {
               ...prev[section],
-              [field]: type === 'file' ? files[0] : type === 'checkbox' ? checked : value,
+              [field]:  type === 'file'
+              ? files && files.length > 0
+                ? String(files[0].name)
+                : ''
+              : type === 'checkbox'
+              ? checked
+              : type === 'radio'
+              ? value === 'true'
+              : value,
             },
           }));
         } else {
@@ -57,18 +70,17 @@ function CampaignForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // try {
-    //   const payload = { ...formData };
+    try {
+      const payload = { ...formData };
 
-    //   const response = await axios.post('/api/campaigns', payload, {
-    //     headers: { 'Content-Type': 'application/json' },
-    //   });
-    //   console.log(response.data);
-    //   alert('Campaign created successfully!');
-    // } catch (error) {
-    //   console.error('Error creating campaign:', error);
-    //   alert('Failed to create campaign');
-    // }
+      const response = await axios.post('http://localhost:4000/api/campaigns', payload)
+      console.log(response.data);
+      alert('Campaign created successfully!');
+      navigate("/");
+    } catch (error) {
+      console.log('Error creating campaign:', error);
+      alert('Failed to create campaign');
+    }
     console.log(formData)
   };
     return (
@@ -325,11 +337,11 @@ function CampaignForm() {
                                 <legend class="text-sm/6 font-semibold text-gray-900">Is Patient Admited ?</legend>
                                 <div class="mt-6  flex justify-evenly gap-10" >
                                     <div class="flex items-center gap-x-3">
-                                        <input id="patient-admited" name="isPatientAdmitted" type="radio" className="border-gray-300 text-custom-green-light focus:ring-custom-green-light"  onChange={(e) => handleChange(e, 'patientDetails', 'isPatientAdmitted')} />
+                                        <input id="patient-admited" name="isPatientAdmitted" value ="true"  checked={formData.patientDetails.isPatientAdmitted === true} type="radio" className="border-gray-300 text-custom-green-light focus:ring-custom-green-light"  onChange={(e) => handleChange(e, 'patientDetails', 'isPatientAdmitted')} />
                                             <label for="patient-admited" class="block text-sm/6 font-medium text-gray-900">Admited</label>
                                     </div>
                                     <div class="flex items-center  gap-x-3">
-                                        <input id="patient-not-admited" name="isPatientAdmitted" type="radio" className="border-gray-300 text-custom-green-light focus:ring-custom-green-light"  onChange={(e) => handleChange(e, 'patientDetails', 'isPatientAdmitted')} />
+                                        <input id="patient-not-admited" name="isPatientAdmitted" value = "false"  checked={formData.patientDetails.isPatientAdmitted === false}  type="radio" className="border-gray-300 text-custom-green-light focus:ring-custom-green-light"  onChange={(e) => handleChange(e, 'patientDetails', 'isPatientAdmitted')} />
                                             <label for="patient-not-admited" class="block text-sm/6 font-medium text-gray-900">Not Admited</label>
                                     </div>
                                 </div>
