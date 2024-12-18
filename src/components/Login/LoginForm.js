@@ -1,8 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 export default function LoginForm() {
+    const [formData,setFormData]=useState({
+        username:"",
+        email:"",
+        password:"",
+    });
+    const navigate = useNavigate();
+    const loginUrl = "http://localhost:4000/api/user/signin";
+    const handleChange=(e)=>{
+        const {name,value} = e.target;
+        setFormData({ ...formData, [name]: value });
+
+    }
+    const handleSubmit = async (e)=>{
+        e.preventDefault();
+        try{
+            const response = await axios.post(loginUrl,formData);
+            const {user,token} = response.data.data;
+            console.log(user,token);
+            localStorage.setItem('token',token);
+            localStorage.setItem('user', JSON.stringify(user));
+            alert("login Successfull");
+            navigate("/");
+        }
+        catch(error){
+            console.error("Login Failed:", error.response?.data || error.message);
+            alert("Failed to Login: " + (error.response?.data?.message || error.message));
+        }
+    
+    }
     return (
         <div className='p-20'>
             <Typography
@@ -19,9 +50,10 @@ export default function LoginForm() {
                         textAlign: "start",
                     }}
                 >
-                    Login Or Sign In
+                  Login or SignIn
+                   
                 </Typography>
-            <form  >
+            <form onSubmit={handleSubmit} >
                 <div className="space-y-12">
                     <div className="border-b border-gray-900/10 pb-12 ">
                         <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
@@ -37,6 +69,8 @@ export default function LoginForm() {
                                             type="text"
                                             placeholder="janesmith"
                                             autoComplete="username"
+                                            value = {formData.username}
+                                            onChange={handleChange}
                                             className="block flex-1 border-0 bg-transparent py-3 pl-5 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm/3"
                                         />
                                     </div>
@@ -52,7 +86,9 @@ export default function LoginForm() {
                                         name="email"
                                         type="email"
                                         autoComplete="email"
+                                        value = {formData.email}
                                         placeholder='janesmith@gmail.com'
+                                        onChange={handleChange}
                                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus-within:ring-custom-green-light sm:text-sm/6"
                                     />
                                 </div>
@@ -63,10 +99,12 @@ export default function LoginForm() {
                                 </label>
                                 <div className="mt-2">
                                     <input
-                                        id="email"
-                                        name="email"
+                                        id="password"
+                                        name="password"
                                         type="password"
                                         autoComplete="email"
+                                        value={formData.password}
+                                        onChange={handleChange}
                                         placeholder='* * * * * * * * * * * * * * *'
                                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus-within:ring-custom-green-light sm:text-sm/6"
                                     />

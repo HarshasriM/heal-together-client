@@ -1,14 +1,14 @@
 import React from 'react';
 import { useState } from 'react';
 function CampaignFilter({ onFilterChange }) {
-    const [category, setCategory] = useState("");
+    const [campaignCategory, setCampaignCategory] = useState("");
     const [amountRange, setAmountRange] = useState(""); // Min and Max range
-    const [sortField, setSortField] = useState("");
+    const [sortField, setSortField] = useState("targetAmount");
     const [sortOrder, setSortOrder] = useState("asc"); // 'asc' or 'desc'
 
     // Handle changes
     const handleCategoryChange = (e) => {
-        setCategory(e.target.value);
+        setCampaignCategory(e.target.value);
         sendFiltersToParent();
     };
 
@@ -29,7 +29,7 @@ function CampaignFilter({ onFilterChange }) {
 
     const sendFiltersToParent = () => {
         onFilterChange({
-            category,
+            campaignCategory,
             amountRange,
             sortField,
             sortOrder
@@ -46,12 +46,12 @@ function CampaignFilter({ onFilterChange }) {
                 <div className="mb-4">
                     <label className="block text-xl m-4 text-custom-green-dark">Category</label>
                     <select
-                        value={category}
+                        value={campaignCategory}
                         onChange={handleCategoryChange}
                         className="ml-4 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-custom-green-light sm:max-w-xs sm:text-sm/6"
                     >
                         <option value="">All Categories</option>
-                        <option value="health">Health</option>
+                        <option value="health">Medical Emergency</option>
                         <option value="education">Education</option>
                         <option value="community">Community</option>
                     </select>

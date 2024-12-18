@@ -5,6 +5,13 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [tokenString,setTokenString] = useState( localStorage.getItem("token"))
+    const handleLogout = () =>{
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        setTokenString(localStorage.getItem("token"));
+    }
+    
     return (
         <>
             <nav className='bg-custom-gradient text-white font-bold fixed w-full z-10 px-2'>
@@ -30,7 +37,9 @@ function Navbar() {
                                 <Link to="/about" className="btn-nav-hover  text-white  pt-7">About Us</Link>
                             </li>
                             <li>
-                                <Link to="/login" className="btn-nav-hover  text-white  pt-7">Login</Link>
+                                {tokenString ? (<Link  onClick={handleLogout} className="btn-nav-hover  text-white  pt-7">Logout</Link>):
+                                (<Link to="/login"  className="btn-nav-hover  text-white  pt-7">Login</Link>) }
+                                
                             </li>
                         </ul>
                     </div>
