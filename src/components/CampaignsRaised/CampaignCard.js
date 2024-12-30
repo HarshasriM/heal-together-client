@@ -23,6 +23,8 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
 }));
 
 function CampaignCard({ campaign }) {
+    console.log("campaign",campaign)
+    
     return (
         <div key={campaign.id} className="border p-1 mb-4 w-64 rounded-2xl hover:shadow-custom-green-light hover:shadow-md" style={{height:"min-content"}}>
             <div>
@@ -30,7 +32,7 @@ function CampaignCard({ campaign }) {
             </div>
             <div className='mt-4'>
                 <h3 className="font-bold text-center m-1">{campaign.campaignTitle}</h3>
-                <p className='text-center m-1 text-lg'>By  <span className='text-custom-green-dark font-bold'> {campaign.campaignerDetails.firstName}</span></p>
+                <p className='text-center m-1 text-lg'>By  <span className='text-custom-green-dark font-bold'> {campaign.campaignerDetails?.firstName}</span></p>
                 <p className='m-2 text-md text-gray-400'><span className='text-lg font-bold text-black'> ₹ {campaign.collectedAmount} </span> Raised Of ₹ {campaign.targetAmount}</p>
                 <BorderLinearProgress variant="determinate" value={((campaign.collectedAmount) / (campaign.targetAmount)) * 100} />
                 <p className='m-2 text-md text-custom-green-light font-bold'>Deadline: {campaign.deadline}</p>
